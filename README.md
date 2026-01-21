@@ -90,4 +90,4 @@ For **every input PDF**, the output must be **one JSON object** containing **all
 ## Author
 Developed for scalable and reliable insurance document processing.
 Author
-[@sonuyadav](https://github.com/raos0nu)
+@vishalgodara(https://github.com/vishal-240)
