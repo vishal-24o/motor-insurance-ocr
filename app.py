@@ -525,7 +525,10 @@ def index():
                 (session["filled_count"] / session["field_count"]) * 100, 1
             ) if session["field_count"] else 0
 
-            session["success"] = "PDF processed successfully."
+            session["success"] = (
+            f"PDF processed successfully. "
+            f"Found {session['filled_count']} out of {session['field_count']} fields."
+)
             save_path.unlink(missing_ok=True)
 
         except Exception as e:
