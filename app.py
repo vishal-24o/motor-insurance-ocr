@@ -255,6 +255,15 @@ input[type="file"] {
   color: var(--orange-soft);
 }
 
+.stat .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .fields {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -335,13 +344,24 @@ Choose PDF
 
 {% if extracted_data %}
 <div class="card results">
-<h2>Extracted Results</h2>
+  <h2>Extracted Results</h2>
 
-<div class="stats">
-<div class="stat"><div class="value">{{ field_count }}</div></div>
-<div class="stat"><div class="value">{{ filled_count }}</div></div>
-<div class="stat"><div class="value">{{ completion_rate }}%</div></div>
-</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="label">Total Fields</div>
+      <div class="value">{{ field_count }}</div>
+    </div>
+
+    <div class="stat">
+      <div class="label">Fields Extracted</div>
+      <div class="value">{{ filled_count }}</div>
+    </div>
+
+    <div class="stat">
+      <div class="label">Completion Rate</div>
+      <div class="value">{{ completion_rate }}%</div>
+    </div>
+  </div>
 
 <div class="fields">
 {% for key, value in extracted_data.items() %}
